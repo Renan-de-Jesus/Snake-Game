@@ -55,7 +55,6 @@ function desenhaCobra() {
   // Desenha a cabeça da cobra
   fill(85, 178, 87); // Define a cor da cabeça da cobra
   ellipse(xCobra, yCobra, wCobra, hCobra);
-  //rect(xCobra, yCobra, wCobra, hCobra);
 
   // Atualiza a posição do rabo da cobra
   for (let i = partes - 1; i > 0; i--) {
@@ -67,7 +66,6 @@ function desenhaCobra() {
   for (let i = 0; i < partes; i++) {
     fill(85, 178, 87); // Define a cor do rabo da cobra
     ellipse(rabo[i][0], rabo[i][1], wCobra, hCobra);
-   // rect(rabo[i][0], rabo[i][1], wCobra, hCobra);
   }
 }
 
