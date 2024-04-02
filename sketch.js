@@ -15,8 +15,8 @@ let velocidadeCobra = 5;
 let direcao = "right";
 
 //comida
-comidaXPosition = randomIntFromInterval(12, canvaW - 11);
-comidaYPosition = randomIntFromInterval(12, canvaH - 11);
+comidaXPosition = randomIntFromInterval(10, canvaW - 11);
+comidaYPosition = randomIntFromInterval(10, canvaH - 11);
 
 let colidiu = false;
 let comeu = false;
@@ -37,12 +37,25 @@ let posicaoYParedeCima = 0;
 let posicaoXParedeBaixo = 0;
 let posicaoYParedeBaixo = 390;
 
+let started = false;
+
+function iniciarJogo() {
+  if (!started) {
+    setup();
+    started = true;
+    document.getElementById('startButton').disabled = true;
+  }
+}
+
 function setup() {
   createCanvas(canvaW, canvaH);
-  frameRate(20);
+  frameRate(30);
+  comidaXPosition = randomIntFromInterval(10, canvaW - 11);
+  comidaYPosition = randomIntFromInterval(10, canvaH - 11);
 }
 
 function draw() {
+  if (!started) return;
   background(255);
   desenhaCobra();
   desenhaParedes();
@@ -140,6 +153,13 @@ function resetarJogo() {
   rabo = [];
   direcao = "right";
 }
+
+window.addEventListener("keydown", function(e) {
+  // Verifica se a tecla pressionada é uma das setas
+  if(["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"].indexOf(e.code) > -1) {
+    e.preventDefault(); // Impede a ação padrão da tecla
+  }
+}, false);
 
 
 function colisaoComida(){

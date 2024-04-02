@@ -16,13 +16,55 @@
         background-image: url("../Icons/SNAKEGAME.png");
         background-size: cover;
       }
+      .btn-container{
+        display:flex;
+        justify-content: center;
+      }
+      .btn {
+        margin: 10px
+      }
+      .btn-reset {
+        background-color: #00000023;
+        border: solid rgba(0, 0, 0, 0.267);
+        color: rgb(255, 255, 255);
+        padding: 10px 8px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 10px 100px;
+        cursor: pointer;
+        border-radius: 20px;
+      }
+      .btn-reset:hover {
+        background-color: #0000007a;
+      }
+      .btn-primary {
+        background-color: #00000023;
+        border: solid rgba(0, 0, 0, 0.267);
+        color: rgb(255, 255, 255);
+        padding: 10px 8px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 10px 100px;
+        cursor: pointer;
+        border-radius: 20px;
+      }
+      .btn-primary:hover {
+        background-color: #0000007a;
+      }
     </style>
+    
   </head>
 
   <body>
     <div class="container">
       <canvas id="snake-game"></canvas>
     </div>
+    <button id="startButton" onclick="iniciarJogo()" class="btn btn-primary mt-3">Iniciar</button>
+    <button onclick="resetarJogo()" class="btn-reset mt-3" > Reiniciar </button>
     <script src="sketch.js"></script>
   </body>
 </html>
